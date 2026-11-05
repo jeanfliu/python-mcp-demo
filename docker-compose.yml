@@ -45,6 +45,26 @@ services:
       ollama-init:
         condition: service_completed_successfully
     restart: "no"
+
+  mcp-inspector:
+    build:
+      context: .
+      dockerfile: Dockerfile.inspector
+    # container_name: mcp-inspector
+    ports:
+      - "127.0.0.1:6274:6274"
+    # environment:
+      # HOST: 0.0.0.0
+      # CLIENT_PORT: 6274
+      # DANGEROUSLY_BIND_ALL_INTERFACES: "true"
+      # MCP_AUTO_OPEN_ENABLED: "false"
+
+      # # GitHub Codespaces origin
+      # ALLOWED_ORIGINS: "https://humble-telegram-697q9gj57gwh56q7-6274.app.github.dev,http://localhost:6274"
+      # MCP_INSPECTOR_ALLOWED_HOSTS: "humble-telegram-697q9gj57gwh56q7-6274.app.github.dev"
+    volumes:
+      - .:/app:ro
+    restart: unless-stopped
     
 volumes:
   ollama_data:

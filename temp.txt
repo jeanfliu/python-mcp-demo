@@ -1,0 +1,9 @@
+docker compose up -d --build
+docker compose ps -a
+
+docker compose logs python-mcp
+docker compose logs -f mcp-inspector
+  ```
+  MCP Inspector Web is up and running at:
+    http://localhost:6274?MCP_INSPECTOR_API_TOKEN=...
+  ```
