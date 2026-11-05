@@ -19,7 +19,8 @@ import ollama
 from mcp import ClientSession, StdioServerParameters
 from mcp.client.stdio import stdio_client
 
-MODEL = "gemma4:e2b"          # swap to llama3.2:3b, mistral, etc.
+# MODEL = "gemma4:e2b"          # swap to llama3.2:3b, mistral, etc.
+MODEL = "qwen2.5:0.5b"          # swap to llama3.2:3b, mistral, etc.
 SERVER_SCRIPT = "server.py"   # path to your MCP server
 
 
